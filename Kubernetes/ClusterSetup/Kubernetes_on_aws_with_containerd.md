@@ -106,8 +106,8 @@ sudo apt-mark hold kubelet kubeadm kubectl
 ## Run on Master Node and follow the instructions
 
 ```
-kubeadm config images pull
-kubeadm init
+sudo kubeadm config images pull
+sudo kubeadm init
 ```
 #### Install any CNI plugin. We will use weavenet
 ```
