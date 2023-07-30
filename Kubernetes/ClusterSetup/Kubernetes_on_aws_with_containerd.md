@@ -109,6 +109,12 @@ sudo apt-mark hold kubelet kubeadm kubectl
 sudo kubeadm config images pull
 sudo kubeadm init
 ```
+### To start using your cluster, you need to run the following as a regular user: (Only On Master)
+```
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
 #### Install any CNI plugin. We will use weavenet
 ```
 kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
